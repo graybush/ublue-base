@@ -33,6 +33,25 @@ The `latest` tag will automatically point to the latest build.
 - Core GNOME Applications installed from Flathub
   - GNOME Calculator, Calendar, Characters, Connections, Contacts, Evince, Firmware, Logs, Maps, NautilusPreviewer, TextEditor, Weather, baobab, clocks, eog, and font-viewer
 
+## Further Customization
+
+The `just` task runner is included for further customization after first boot.
+It will copy the template from `/etc/justfile` to your home directory.
+After that run the following commands:
+
+- `just` - Show all tasks, more will be added in the future
+- `just bios` - Reboot into the system bios (Useful for dualbooting)
+- Set up distroboxes for the following images:
+  - `just distrobox-boxkit`
+  - `just distrobox-debian`
+  - `just distrobox-opensuse`
+  - `just distrobox-ubuntu`
+- `just setup-flatpaks` - Install a selection of flatpaks, use this section to add your own apps
+- `just setup-gaming` - Install Steam, Heroic Game Launcher, OBS Studio, Discord, Boatswain, Bottles, and ProtonUp-Qt. MangoHud is installed and enabled by default, hit right Shift-F12 to toggle
+- `just update` - Update rpm-ostree, flatpaks, and distroboxes in one command
+
+Check the [just website](https://just.systems) for tips on modifying and adding your own recipes.
+
 ## Verification
 
 These images are signed with sisgstore's [cosign](https://docs.sigstore.dev/cosign/overview/). You can verify the signature by downloading the `cosign.pub` key from this repo and running the following command:

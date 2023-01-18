@@ -7,7 +7,7 @@ COPY etc /etc
 
 COPY ublue-firstboot /usr/bin
 
-RUN rpm-ostree install distrobox && \
+RUN rpm-ostree install distrobox just && \
     sed -i 's/#AutomaticUpdatePolicy.*/AutomaticUpdatePolicy=stage/' /etc/rpm-ostreed.conf && \
     systemctl enable rpm-ostreed-automatic.timer && \
     systemctl enable flatpak-automatic.timer && \
