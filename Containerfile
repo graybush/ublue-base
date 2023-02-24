@@ -9,13 +9,14 @@ FROM quay.io/fedora-ostree-desktops/silverblue:${FEDORA_MAJOR_VERSION}
 RUN wget https://copr.fedorainfracloud.org/coprs/ublue-os/vanilla-first-setup/repo/fedora-$(rpm -E %fedora)/ublue-os-vanilla-first-setup-fedora-$(rpm -E %fedora).repo -O /etc/yum.repos.d/_copr_ublue-os-vanilla-first-setup.repo
 
 COPY etc /etc
+COPY usr /usr
 
 COPY ublue-firstboot /usr/bin
 
 RUN rpm-ostree install distrobox just vte291-gtk4-devel vanilla-first-setup && \
     sed -i 's/#AutomaticUpdatePolicy.*/AutomaticUpdatePolicy=stage/' /etc/rpm-ostreed.conf && \
     systemctl enable rpm-ostreed-automatic.timer && \
-    systemctl enable flatpak-automatic.timer && \
+    systemctl enable flatpak-system-update.timer && \
     sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_ublue-os-vanilla-first-setup.repo && \
     rm -rf \
         /tmp/* \
