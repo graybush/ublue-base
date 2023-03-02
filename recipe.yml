@@ -1,0 +1,10 @@
+rpms:
+  - evolution
+  - distrobox
+  - just
+flatpaks:
+  - org.libreoffice.LibreOffice
+  - org.gnome.DejaDup
+  - org.gustavoperedo.FontDownloader
+  - org.videolan.VLC
+  - com.github.tchx84.Flatseal

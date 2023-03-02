@@ -16,7 +16,8 @@ These github actions and methods are meant to be shared and improved upon, [so c
 
 ## Usage
 
-Warning: This is an experimental feature and should not be used in production (yet), however it's pretty close) Depending on the version of rpm-ostree on your system you might need to pass an additional `--experimental` flag
+> **Warning** 
+> This is an experimental feature and should not be used in production, try it in a VM for a while! If you are rebasing and not doing a clean install do a `touch ~/.config/ublue/firstboot-done` to keep your flatpak configuration untouched BEFORE you rebase, otherwise we're going to mangle it (for science). 
 
 To rebase an existing Silverblue/Kinoite machine to the latest release (37):
 
@@ -71,4 +72,4 @@ If you're forking this repo you should [read the docs](https://docs.github.com/e
 
 ## Making your own
 
-See [the documentation](https://ublue.it/making-your-own/) on how to clone and use this repo foor your own projects.
+See [the documentation](https://ublue.it/making-your-own/) on how to clone and use this repo for your own projects.

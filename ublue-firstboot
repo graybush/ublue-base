@@ -58,50 +58,23 @@ if [ "$?" != 0 ] ; then
 fi
 echo "25"
 
-echo "# Installing Evolution"
-/usr/bin/flatpak install --user --noninteractive flathub org.gnome.Evolution
-if [ "$?" != 0 ] ; then
-        zenity --error \
-          --text="Installing Evolution Failed"
-        exit 1
-fi
-echo "40"
+echo "# Installing flatpaks from recipe"
+flatpaks=$(yq '.flatpaks[]' < /etc/ublue-recipe.yml)
+flatpaks_count=$(yq '.flatpaks[]' < /etc/ublue-recipe.yml | wc -l)
+i=0
+for pkg in $flatpaks; do
+  echo "# Installing ${pkg}"
+  /usr/bin/flatpak install --user --noninteractive flathub $pkg
+  if [ "$?" != 0 ] ; then
+          zenity --error \
+            --text="Installing ${pkg} Failed"
+          exit 1
+  fi
+  i=$((i+1))
+  # Automatically calculates evenly spaced progess using bc, cuts everything after decimal point.
+  echo "${i}/${flatpaks_count} * (95-30) + 30" | bc -l | cut -d "." -f1 
+done
 
-echo "# Installing LibreOffice"
-/usr/bin/flatpak install --user --noninteractive flathub org.libreoffice.LibreOffice
-if [ "$?" != 0 ] ; then
-        zenity --error \
-          --text="Installing LibreOffice Failed"
-        exit 1
-fi
-echo "70"
-
-echo "# Installing Font Downloader"
-/usr/bin/flatpak install --user --noninteractive flathub org.gustavoperedo.FontDownloader
-if [ "$?" != 0 ] ; then
-        zenity --error \
-          --text="Installing FontDownloader Failed"
-        exit 1
-fi
-echo "85"
-
-echo "# Installing Flatseal"
-/usr/bin/flatpak install --user --noninteractive flathub com.github.tchx84.Flatseal
-if [ "$?" != 0 ] ; then
-        zenity --error \
-          --text="Installing Flatseal Failed"
-        exit 1
-fi
-echo "90"
-
-echo "# Installing VLC Media Player"
-/usr/bin/flatpak install --user --noninteractive flathub org.videolan.VLC
-if [ "$?" != 0 ] ; then
-        zenity --error \
-          --text="Installing VLC Failed"
-        exit 1
-fi
-echo "95"
 
 echo "Enabling Flatpak auto update"
 /usr/bin/systemctl --user enable --now flatpak-user-update.timer
