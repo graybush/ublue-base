@@ -3,8 +3,17 @@ rpms:
   - distrobox
   - just
 flatpaks:
-  - org.libreoffice.LibreOffice
+  - cc.arduino.arduinoide
+  - com.github.micahflee.torbrowser-launcher
+  - com.github.tchx84.Flatseal
+  - im.riot.Riot
+  - io.dbeaver.DBeaverCommunity
+  - io.freetubeapp.FreeTube
+  - io.github.TransmissionRemoteGtk
+  - org.freedesktop.Piper
   - org.gnome.DejaDup
   - org.gustavoperedo.FontDownloader
+  - org.keepassxc.KeePassXC
+  - org.libreoffice.LibreOffice
   - org.videolan.VLC
   - com.github.tchx84.Flatseal
