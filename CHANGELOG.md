@@ -1,5 +1,31 @@
 # Changelog
 
+## [1.3.0](https://github.com/graybush/ublue-base/compare/v1.2.0...v1.3.0) (2023-03-11)
+
+
+### Features
+
+* add how to review a PR ([#76](https://github.com/graybush/ublue-base/issues/76)) ([ae2e25b](https://github.com/graybush/ublue-base/commit/ae2e25b92f5ebebed2fcaad53ecfab651a639d12))
+* ease customization by reading flatpaks and rpms to install from a recipe.yml. ([#79](https://github.com/graybush/ublue-base/issues/79)) ([a5e90a5](https://github.com/graybush/ublue-base/commit/a5e90a588f58a938405bf513d1032955be34028e))
+* gha for building / publishing on pr ([#87](https://github.com/graybush/ublue-base/issues/87)) ([1726d18](https://github.com/graybush/ublue-base/commit/1726d182ee95ce5eb13f47212799a68b63c5aefc))
+* Merge remote-tracking branch 'upstream/main' ([3a3d9fd](https://github.com/graybush/ublue-base/commit/3a3d9fda22fcaf905a8a69d53b8a446cfcf0bd41))
+* split flatpak update units into user and system ([#72](https://github.com/graybush/ublue-base/issues/72)) ([99c15be](https://github.com/graybush/ublue-base/commit/99c15be6f012cb590891c5ef16b2613dc538d144))
+* switch to cwwalters base image ([eddb11a](https://github.com/graybush/ublue-base/commit/eddb11a6ad78633b15a624cf203921d77109309a))
+
+
+### Bug Fixes
+
+* add a warning that we change the flatpak configuration ([#80](https://github.com/graybush/ublue-base/issues/80)) ([9a349e2](https://github.com/graybush/ublue-base/commit/9a349e2625791b90c11f640938060344ec3e4bd5))
+* allow forks to push to registry with label ([#86](https://github.com/graybush/ublue-base/issues/86)) ([14b1b7c](https://github.com/graybush/ublue-base/commit/14b1b7cb044ec616817aa30075609469dcb9986b))
+* artifact upload/extract ([#88](https://github.com/graybush/ublue-base/issues/88)) ([6590066](https://github.com/graybush/ublue-base/commit/6590066ebcf72d6c4a56730dd682088db17d7df0))
+* re-tag image ([#92](https://github.com/graybush/ublue-base/issues/92)) ([a831ce0](https://github.com/graybush/ublue-base/commit/a831ce00df84d94e2bdb48013f650bcbb5b39568))
+* remove 38 ([#89](https://github.com/graybush/ublue-base/issues/89)) ([8a6f343](https://github.com/graybush/ublue-base/commit/8a6f3433ad45b0f9f3da974a691001c02f498fb1))
+* remove if statements ([#96](https://github.com/graybush/ublue-base/issues/96)) ([0c7bc17](https://github.com/graybush/ublue-base/commit/0c7bc17666ae038a0504d24a0e683f724c734527))
+* remove old pr workflow sections ([#98](https://github.com/graybush/ublue-base/issues/98)) ([4a21580](https://github.com/graybush/ublue-base/commit/4a21580f4e4d40692449bae61a75a555e8569be1))
+* rename package back to `base` ([#97](https://github.com/graybush/ublue-base/issues/97)) ([785b8f0](https://github.com/graybush/ublue-base/commit/785b8f0d8adb8513bbe94b8918bfc0033ee0ca45))
+* restore download artifact step, support multi-line tags ([#90](https://github.com/graybush/ublue-base/issues/90)) ([c40bddf](https://github.com/graybush/ublue-base/commit/c40bddfdf39a61545700ecb8123a02abd24a4f8f))
+* update cosign action ([#94](https://github.com/graybush/ublue-base/issues/94)) ([0aff9ba](https://github.com/graybush/ublue-base/commit/0aff9bac374c3494f57a360fd4426afe705bfee9))
+
 ## [1.2.0](https://github.com/graybush/ublue-base/compare/v1.1.0...v1.2.0) (2023-02-17)
 
 
